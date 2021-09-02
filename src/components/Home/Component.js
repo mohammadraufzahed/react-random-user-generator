@@ -44,33 +44,41 @@ const Home = () => {
     addData();
   }, [update]);
   return (
-    <div className="columns is-vcentered is-centered mt-6">
-      <div className="column is-4 is-vcentered">
-        <div className="box userBox columns">
-          <div className="column">
-            <article className="media">
-              <div className="media-left">
-                <figure className="image is-128x128 ">
-                  <img src={image} alt="profile" />
-                </figure>
+    <div className="flex h-screen">
+      <div className="m-auto">
+        <div className="grid grid-rows-12 border-2 border-black bg-gray-300 backdrop-blur">
+          <div className="grid grid-rows-12 p-5">
+            <img
+              src={image}
+              alt="profile"
+              className="mx-auto rounded border-2 border-black mb-4"
+            />
+            <p className="mx-auto mb-3 grid grid-rows-12 text-left border-2 border-black">
+              <div className="px-2 py-1 mb-1">
+                <strong>Name: </strong>
+                <span>
+                  {gender}.{firstName} {lastName}
+                </span>
               </div>
-              <div className="media-content">
-                <div className="content">
-                  <p>
-                    <strong>
-                      Name: {gender}.{firstName} {lastName}
-                      <br />
-                    </strong>
-                    <p>Email: {email}</p>
-                    <p>Phone: {phone}</p>
-                    <p>City: {city}</p>
-                  </p>
-                  <button className="button is-dark" onClick={() => addData()}>
-                    Generate new user
-                  </button>
-                </div>
+              <div className="px-2 mb-1">
+                <strong>Email: </strong>
+                <span>{email}</span>
               </div>
-            </article>
+              <div className="px-2 mb-1">
+                <strong>Phone: </strong>
+                <span>{phone}</span>
+              </div>
+              <div className="px-2 mb-1">
+                <strong>City: </strong>
+                <span>{city}</span>
+              </div>
+            </p>
+            <button
+              className="button-narrow bg-white hover:bg-black hover:text-white transition-all p-2 mx-auto"
+              onClick={() => addData()}
+            >
+              Generate new user
+            </button>
           </div>
         </div>
       </div>

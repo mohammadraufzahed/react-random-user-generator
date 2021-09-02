@@ -6,26 +6,24 @@ import About from "./components/About/Component";
 function App() {
   return (
     <Router>
-      <div className="container-is-fullhd">
-        <nav className="navbar" role="navigation" aria-label="Main nav">
-          <div className="navbar-brand">
-            <Link to="/" className="navbar-item">
-              User generator
-            </Link>
-          </div>
-          <div id="navbarItems" className="navbar-menu">
-            <div className="navbar-end">
-              <Link to="/about" className="navbar-item">
-                About
+      <div className="w-screen h-screen bg-gray-100 backdrop-blur">
+        <nav className="bg-gray-200 backdrop-blur">
+          <div class="flex items-center justify-between px-3 text-black">
+            <div className="hover:border-b-2 hover:border-black transition-all py-2">
+              <Link to="/" className="">
+                User generator
               </Link>
+            </div>
+            <div className="hover:border-b-2 hover:border-black transition-all py-2">
+              <Link to="/about">About</Link>
             </div>
           </div>
         </nav>
         <Switch>
-          <Route path="/about">
+          <Route path="/about" exact>
             <About />
           </Route>
-          <Route path="/">
+          <Route path="/" exact>
             <Home />
           </Route>
         </Switch>
